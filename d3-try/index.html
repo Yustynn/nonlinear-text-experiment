@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Force-Directed Graph</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://dagrejs.github.io/project/dagre/latest/dagre.js"></script>
+    <script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.js"></script>
+    <style>
+        .node {
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
+        .link {
+            stroke: white;
+            stroke-opacity: 0.6;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* This sets the color for "TK" nodes to a light blue green. */
+        g.type-TK > rect {
+            fill: #00ffd0;
+        }
+
+        g.claim > path {
+            stroke: rgb(66, 66, 202);
+        }
+
+        g.extension > path {
+            stroke: rgb(220, 167, 30);
+        }
+
+        g.analysis > path {
+            stroke: rgb(233, 47, 47);
+        }
+
+        text {
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            stroke: black;
+            stroke-width: 1px;
+        }
+
+        .node rect {
+            stroke: #999;
+            fill: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .edgePath path {
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .row > div {
+            padding: 10px 30px;
+        }
+
+        #graph, #content {
+            width: 100%;
+        }
+
+        #graph svg {
+            border: 1px solid black;
+            position: fixed; /* Fix the position of the graph */
+            top: 0; /* Position it at the top of the viewport */
+            right: 0; /* Position it at the right of the viewport */
+            width: 50%; /* Adjust the width as needed */
+            height: 100%; /* Make it take the full height of the viewport */
+            overflow: auto; /* Enable scrolling within the graph if needed */
+        }
+
+        .selected {
+            fill: rgb(103, 185, 103) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <div id="content">
+
+            <h2>Introduction</h2>
+            <div class="n" node-id="1">70 years ago, <a href="https://seminarioneurounam.wordpress.com/wp-content/uploads/2014/04/olds-milner.pdf">Olds and Milner</a> made a magic button for rats to press. It zapped their brains’ reward circuitry. They took 4 rats, shoved each into a box with the button, and watched as every single rat pressed the button thousands of times (more than once every 10 seconds for 6 or 12 hours each).</div>
+
+            <div class="n" node-id="2">Anyway, we should re-engineer that button and give it to kids.</div>
+
+            <p><img src="2024-08-10%20Reward%20Resistance%20Training%20for%20Kids%20aafb01e1ebbe49bc812985d8bc2ff84d/image.png" alt="But maybe have a less invasive version of the button. This is discussed later."></p>
+            <h2>Regimen idea</h2>
+            <div class="n" node-id="3">Here’s the rough sketch.
+            <ol>
+            <li><strong>(build addiction)</strong> Get the child to press the button 10 times.</li>
+            <li><strong>(exercise resistance)</strong> Get the child to *stop* pressing the button for 1 minute.</li>
+            <li><strong>(reward resistance)</strong> After 1 minute, give the child more pleasant zaps as a reward to stop pressing the button than they would have gotten by pressing the button.</li>
+            <li><strong>(grow resistance muscle)</strong> Repeat, with increasing time intervals between rewards until eventually the reward is unnecessary.</li>
+            </ol>
+            </div>
+
+            <div class="n" node-id="37">The goal here is to build up the muscle of disengagement, so that our children may taste of the fruits of our generations of human history without getting distracted by fucking doomscrolling.</div>
+
+            <h2>Some notes about this regimen idea</h2>
+            <div class="n" node-id="19">
+            <h3>We use the hijack against the hijacker.</h3>
+
+            <p>We reward <em>reward resistance</em> with reward.</div> <div class="n" node-id="38">The hilarity of this is, in my opinion, one of the best parts of the plan.</div></p>
+            <div class="n" node-id="20">For it to work, we need the child to eventually stop needing that reward kick from resisting reward. I’m pretty sure that it’d work, though. Reason: I suspect that building dopamine resistance is similar to how, [using the forgetting curve, can exploit active recall to stop forgetting chosen facts](https://en.wikipedia.org/wiki/Forgetting_curve). Eventually, you’d die before you forget something. Similarly, eventually you’d die before you needed that larger reward hit.</div>
+
+            <div class="n" node-id="17">
+            <h3>We train to break addiction, not avoid it.</h3>
+
+            <p>The behavior we’re training is the <em>escape</em> from the fundamental drive of addiction. For this, we need to build the addiction.</p>
+            <p>A worthwhile question: why not remove the addiction urge altogether? After all, the best war is the one you never fight.</p>
+            <p>This deserves more thought, but I’m currently against it and here’s why:</p>
+            </div>
+
+            <ol>
+            <li><div class="n" node-id="16">Sometimes I *want* to be in full-on desire state. Orgasm build-up is pretty great.</div></li>
+            <li><div class="n" node-id="15">I’m worried getting rid of the urge altogether will leave you as a vegetable. Why do anything, if you have destroyed your fundamental particle of desire? Note: I get that people with elaborate beards say that desire is detrimental and that you should mould yourself into enlightened adesirous behavior. But without further investigation, I’m 1) not fully convinced they’re right and 2) not fully convinced that the word “desire” means the same thing to enlightenment that it does to dopamine</div></li>
+            <li><div class="n" node-id="14">I don’t know how you would train against the start of addiction. Seems easier to learn to climb out of holes on a dark night than to train yourself to spot and avoid them with 100% accuracy.</div></li>
+            </ol>
+            <div class="n" node-id="31">
+            <h3>The otherwise-uselessness of the button is important</h3>
+
+            <p>The clinical setting is important.</div> <div class="n" node-id="32">The button can’t have any other value, otherwise you might lie to yourself.</p>
+            <p>You can watch a bunch of tiktoks and tell yourself that there’s some information there that’s useful and meaningful to your life. It’s harder to stop, and hard to disentangle the signal from the reward from the noise.</div></p>
+            <div class="n" node-id="34">
+            <h3>Does the button generalize to TikTok?</h3>
+
+            <p>An important question is: does addiction resistance training in this isolated way will generalize to other contexts? If I get good at resisting button, will I be more resistant to the addiction-pull of watching tiktok?</p>
+            <p>I suspect yes</div>, <div class="n" node-id="35">because being able to deadlift twice your bodyweight at the gym (pretty freaking clinical) makes you able to carry heavy boxes. Similarly, saying nothx to dopamine should be easier too.</div></p>
+            <div class="n" node-id="36">If I’m wrong though, hope isn’t lost. You can imagine that after your initial training, you construct a path to manually transfer the resistance skill from the context of the clinical button to another context (e.g. clinical button → pressing button makes next tiktok appear → tiktok). Do that with enough different settings and I suspect your brain will interpolate across all possible context. I believe this because it’s more efficient for the lazy brain, and [the reward resistance neurons will wire with all sorts of other neurons](https://en.wikipedia.org/wiki/Hebbian_theory).</div>
+
+            <div class="n" node-id="25">
+            <h2>Okay but we can’t actually do the original button, so what can we do?</h2> 
+            </div>
+
+            <div class="n" node-id="27">Unfortunately, I don’t know enough to get electrodes safely shoved into the right parts of my brain</div>. <div class="n" node-id="28">Not that I’m against it, necessarily, but it’d be a tough sell to do this to children.</div> Maybe in the not-so-distant future.
+
+            <p>For what it’s worth, Olds and Milner said they didn’t see any signs that shoving those electrodes into rat brains chronically hurt the rats.</p>
+            <div class="n" node-id="30">
+            Anyway, here’s the criteria for a replacement to the button:
+
+            <ul>
+            <li>The method must provide only brain reward and (ideally) nothing else.</li>
+            <li>The method must be non-invasive</div></li>
+            </ul>
+
+            <p>
+            Of course, being practical people, we are willing to bend on these constraints. But being prudent people, we will bend as little as possible!
+            </p>
+
+            <p>I’m open to suggestions here.</p>
+            <div class="n" node-id="21">
+            <h2>Protocol Improvements</h2>
+            </div>
+
+            <div class="n" node-id="23">
+            <h3>Antirewards</h3>
+
+            <p>Olds and Milner mention some antirewarding brain part that rats really don’t like getting zapped. You could imagine a similar protocol, but which swaps the button’s effect from triggering reward circuitry during the <em>(exercise resistance)</em> phase to triggering antireward circuitry. This is a stick, though, and I suspect the carrot would work better. But perhaps we can combine both carrot and stick.</p>
+            </div>
+
+            <div class="n" node-id="24">
+            <h3>Lack of rewards</h3>
+
+            <p>One interesting thing is that when the rewards stopped, so did the rats’ button presses. Maybe just disconnecting the button during <em>(exercise resistance)</em> is enough.</p>
+            </div>
+
+            <div class="n" node-id="10">
+            <h2>Motivation</h2>
+
+            <p>Imo, motivation is boring to read and generally irrelevant, so I’ve left this section last.</p>
+            </div>
+
+            <div class="n" node-id="8">
+            <h3>Build better self</h3>
+            </div>
+
+            <div class="n" node-id="18">My overall claim is that this regimen would be a better education for a child than algebra.</div> <div class="n" node-id="18">But like a Pixar movie, the regimen is for more than just kids. It applies to myself and I am my own test subject.</div>
+
+            <div class="n" node-id="4">I keep falling into loops of disutility, where I get increasingly unhappy pushing some instantiation of the button. Doomscrolling, reading non-meaningful fiction, youtube vids, masturbation, even informational content and sex. None of these things is necessarily bad, but the inability to control the binging *is*.</div>
+
+            <div class="n" node-id="6">I want to claw my way out of that, so that I push the button when I *want* to, rather than because my reward circuitry is hijacked.</div>
+
+            <div class="n" node-id="7">
+            <h3>Build better world</h3>
+            </div>
+
+            <div class="n" node-id="12">
+            Information, skill and technology have advanced enough that we live in a magical world, yet most people are too busy jacking themselves off with dopamine fleshlights to learn how to cast fireball.
+            </div>
+
+            <div class="n" node-id="13">
+            I want to live in a magical world full of compelling wizards with interesting lives. It may be too destructive and varied to last very long, but I still think it would make me happy. And every step along this path would make me happier.
+            </div>
+
+            <div class="n" node-id="9">
+            <h3>Cool Idea that makes me laugh</h3>
+
+            <p>There’re lots of reasons why this is cool:</p>
+            <ul>
+            <li>Nice analogy to resistance training in the gym. Analogies are cool.</li>
+            <li>Good example of antifragility. Antifragility is cool</li>
+            <li>The use of the exploited circuitry (addiction-forming) to exploit the exploit is so goddamn funny</li>
+            </ul>
+            <p>And really, what reason could be higher, truer or better than “because it makes me laugh”?</p>
+
+
+        </div>
+        </div>
+        <div id="graph">
+            <svg width="100%" height="600"></svg>
+        </div>
+    </div>
+    <script src="graphInfo.js"></script>
+    <script src="app.js"></script>
+    <script src="chooseNode.js"></script>
+</body>
+</html>
