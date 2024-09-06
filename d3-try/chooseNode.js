@@ -91,7 +91,7 @@ function setSelected(el) {
 
 // Usage
 
-addEventListener("scroll", () => setSelected(getTopmostVisibleElement('content')));
+addEventListener("scrollend", () => setSelected(getTopmostVisibleElement('content')));
 
 // Function to handle the onenter event
 function handleMouseEnter(event) {
