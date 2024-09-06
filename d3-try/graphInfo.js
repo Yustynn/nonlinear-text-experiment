@@ -45,7 +45,7 @@ const nodes = [
 
 const links = [
     { source: 1, target: 3, kind: "claim"},
-    { source: 3, target: 2, kind: "claim"},
+    { source: 3, target: 2, kind: "artefact"},
     { source: 4, target: 6, kind: "claim"},
     { source: 6, target: 8, kind: "claim"},
     { source: 7, target: 10, kind: "claim"},
@@ -69,7 +69,7 @@ const links = [
     { source: 25, target: 38, kind: "claim"},
     { source: 27, target: 25, kind: "claim"},
     { source: 28, target: 25, kind: "claim"},
-    { source: 30, target: 38, kind: "claim"},
+    { source: 30, target: 38, kind: "artefact"},
     { source: 31, target: 3, kind: "analysis"},
     { source: 32, target: 31, kind: "claim"},
     { source: 33, target: 7, kind: "extension"},
