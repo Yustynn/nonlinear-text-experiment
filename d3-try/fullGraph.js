@@ -41,7 +41,9 @@ var xCenterOffset = (svg.attr("width") - g.graph().width) / 2;
 svgGroup.attr("transform", "translate(" + xCenterOffset + ", 50)");
 // svg.attr("height", g.graph().height + 40);
 
-function zoomToPosition(x, y, scale) {
+function zoomToPosition(x, y, scale, duration) {
     var transform = d3.zoomIdentity.translate(x, y).scale(scale);
-    svg.transition().duration(500).call(zoom.transform, transform);
+    svg.transition().duration(duration == undefined ? 500 : duration).call(zoom.transform, transform);
 }
+
+zoomToPosition(5, 215, 0.12, 0)
