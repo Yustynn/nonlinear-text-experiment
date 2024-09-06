@@ -66,8 +66,10 @@ function setSelected(el) {
     const id = +nodeEl.getAttribute("node-id");
     renderPartialGraph(id)
 
-    const priorSelected = document.querySelectorAll("svg rect.selected");
+    const priorSelected = document.querySelectorAll(".selected");
     if (priorSelected.length > 0) priorSelected.forEach(s => s.classList.remove("selected"));
+
+    nodeEl.classList.add("selected");
 
     const rectFull = document.querySelector(`#full-graph g.node-${id} > rect`);
     rectFull.classList.add("selected");
@@ -91,7 +93,7 @@ function setSelected(el) {
 
 // Usage
 
-addEventListener("scrollend", () => setSelected(getTopmostVisibleElement('content')));
+addEventListener("scroll", () => setSelected(getTopmostVisibleElement('content')));
 
 // Function to handle the onenter event
 function handleMouseEnter(event) {

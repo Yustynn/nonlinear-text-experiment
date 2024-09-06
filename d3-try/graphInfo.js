@@ -1,7 +1,7 @@
 const nodes = [
     { id: 1, text: "The Button exists for rats" },
     { id: 2, text: "We should train children to resist pressing the button" },
-    { id: 3, text: "Dopamine resistance training program" },
+    { id: 3, text: "Addiction resistance training program" },
     { id: 4, text: "I continually fall into disutility loops" },
     { id: 6, text: "Being able to escape disutility loops more quickly will make me better" },
     { id: 7, text: "Others training reward resistance makes the world better for me" },
