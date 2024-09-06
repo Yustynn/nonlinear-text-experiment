@@ -1,6 +1,6 @@
 const nodes = [
     { id: 1, text: "The Button exists for rats" },
-    { id: 2, text: "We should give the button to kids" },
+    { id: 2, text: "We should train children to resist pressing the button" },
     { id: 3, text: "Dopamine resistance training program" },
     { id: 4, text: "I continually fall into disutility loops" },
     { id: 6, text: "Being able to escape disutility loops more quickly will make me better" },
@@ -44,8 +44,8 @@ const nodes = [
 
 
 const links = [
-    { source: 1, target: 2, kind: "claim"},
-    { source: 2, target: 3, kind: "claim"},
+    { source: 1, target: 3, kind: "claim"},
+    { source: 3, target: 2, kind: "claim"},
     { source: 4, target: 6, kind: "claim"},
     { source: 6, target: 8, kind: "claim"},
     { source: 7, target: 10, kind: "claim"},
@@ -70,7 +70,7 @@ const links = [
     { source: 27, target: 25, kind: "claim"},
     { source: 28, target: 25, kind: "claim"},
     { source: 30, target: 38, kind: "claim"},
-    { source: 31, target: 3, kind: "claim"},
+    { source: 31, target: 3, kind: "analysis"},
     { source: 32, target: 31, kind: "claim"},
     { source: 33, target: 7, kind: "extension"},
     { source: 34, target: 3, kind: "claim"},
