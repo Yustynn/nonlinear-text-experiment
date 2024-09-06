@@ -61,23 +61,32 @@ function setSelected(el) {
         return null;
     }
 
+
     const nodeEl = findNearestNodeEl(el);
-    const id = nodeEl.getAttribute("node-id");
-    const rect = document.querySelector(`g.node-${id} > rect`);
+    const id = +nodeEl.getAttribute("node-id");
+    renderPartialGraph(id)
 
-    const priorSelected = document.querySelector("rect.selected");
-    if (priorSelected) priorSelected.classList.remove("selected");
+    const priorSelected = document.querySelectorAll("svg rect.selected");
+    if (priorSelected.length > 0) priorSelected.forEach(s => s.classList.remove("selected"));
 
-    rect.classList.add("selected");
+    const rectFull = document.querySelector(`#full-graph g.node-${id} > rect`);
+    rectFull.classList.add("selected");
+    const rectPartial = document.querySelector(`#partial-graph g.node-${id} > rect`);
+    rectPartial.classList.add("selected");
 
-    const { x, y } = extractTranslateValues(rect.parentElement.getAttribute("transform"));
-
-    const svg = document.querySelector("svg");
-    const w = svg.clientWidth;
-    const h = svg.clientHeight;
     
-    zoomToPosition(w/2 - x, h/2 - y, 1)
-    console.log(`Node ${id} should be in view (x: ${x} to ${x + w/2}, y: ${y} to ${y + h/2})`);
+    if (config.fullGraph.autoPan) {
+        const { x, y } = extractTranslateValues(rectFull.parentElement.getAttribute("transform"));
+
+        const svg = document.querySelector("svg");
+        const w = svg.clientWidth;
+        const h = svg.clientHeight;
+
+        zoomToPosition(w/2 - x, h/2 - y, 1)
+        console.log(`Node ${id} should be in view (x: ${x} to ${x + w/2}, y: ${y} to ${y + h/2})`);
+
+    }
+
 }
 
 // Usage

@@ -23,7 +23,7 @@ var render = new dagreD3.render();
 
 // Set up an SVG group so that we can translate the final graph.
 // var svg = d3.select("#content").append("svg"),
-var svg = d3.select("svg"),
+var svg = d3.select("#full-graph"),
     svgGroup = svg.append("g");
 
 // Add zoom and pan behavior
@@ -34,14 +34,14 @@ var zoom = d3.zoom().on("zoom", function(event) {
 svg.call(zoom);
 
 // Run the renderer. This is what draws the final graph.
-render(d3.select("svg g"), g);
+render(d3.select("#full-graph g"), g);
 
 // Center the graph
 var xCenterOffset = (svg.attr("width") - g.graph().width) / 2;
-svgGroup.attr("transform", "translate(" + xCenterOffset + ", 20)");
-svg.attr("height", g.graph().height + 40);
+svgGroup.attr("transform", "translate(" + xCenterOffset + ", 50)");
+// svg.attr("height", g.graph().height + 40);
 
 function zoomToPosition(x, y, scale) {
     var transform = d3.zoomIdentity.translate(x, y).scale(scale);
-    svg.transition().duration(750).call(zoom.transform, transform);
+    svg.transition().duration(500).call(zoom.transform, transform);
 }

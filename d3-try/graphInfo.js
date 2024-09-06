@@ -33,8 +33,15 @@ const nodes = [
     { id: 36, text: "If generalization doesn't happen naturally, you can manually train it to happen" },
     { id: 37, text: "Training people to resist reward will lead to them having better lives" },
     { id: 38, text: "Replacement for the original button" },
-    { id: 39, text: "Invasive procedure is hard to perform" }
+    { id: 39, text: "Invasive procedure is hard to perform" },
+    { id: 40, text: "Some 'wise' people think adesirous behavior is good" },
+    { id: 41, text: "I'm unconvinced that adesirous behavior is good" },
+    { id: 42, text: "In the enlightenment context, maybe desire ≠ reward anyway" },
+    { id: 43, text: "The good 'adesirous behavior' may be different from the reward 'adesirous behavior'" },
+    { id: 44, text: "Removing desire might be bad" },
 ];
+
+
 
 const links = [
     { source: 1, target: 2, kind: "claim"},
@@ -44,18 +51,16 @@ const links = [
     { source: 7, target: 10, kind: "claim"},
     { source: 8, target: 33, kind: "claim"},
     { source: 9, target: 10, kind: "claim"},
-    { source: 9, target: 10, kind: "claim"},
-    { source: 10, target: 37, kind: "claim"},
     { source: 12, target: 7, kind: "claim"},
     { source: 13, target: 7, kind: "claim"},
     { source: 14, target: 17, kind: "claim"},
-    { source: 15, target: 17, kind: "claim"},
+    { source: 15, target: 40, kind: "claim"},
     { source: 16, target: 17, kind: "claim"},
     { source: 17, target: 37, kind: "analysis"},
     { source: 18, target: 2, kind: "claim"},
     { source: 19, target: 3, kind: "analysis"},
     { source: 20, target: 19, kind: "assumption"},
-    { source: 20, target: 3, kind: "claim"},
+    { source: 20, target: 3, kind: "assumption"},
     { source: 21, target: 3, kind: "extension"},
     { source: 22, target: 33, kind: "claim"},
     { source: 22, target: 8, kind: "claim"},
@@ -69,8 +74,16 @@ const links = [
     { source: 32, target: 31, kind: "claim"},
     { source: 33, target: 7, kind: "extension"},
     { source: 34, target: 3, kind: "claim"},
+    { source: 35, target: 34, kind: "argument-by-analogy"},
+    { source: 36, target: 34, kind: "extension"},
     { source: 37, target: 2, kind: "claim"},
+    { source: 37, target: 10, kind: "claim"},
     { source: 38, target: 3, kind: "extension"},
     { source: 39, target: 25, kind: "claim"},
+    { source: 40, target: 44, kind: "counter"},
+    { source: 41, target: 40, kind: "counter"},
+    { source: 42, target: 43, kind: "claim"},
+    { source: 43, target: 40, kind: "counter"},
+    { source: 44, target: 17, kind: "claim"},
 ];
 
