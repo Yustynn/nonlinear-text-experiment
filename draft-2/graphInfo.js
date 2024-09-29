@@ -59,6 +59,7 @@ const nodes = [
     { id: 50, text: "Allowing a multiple parts of the text to belong to the same node" },
     { id: 51, text: "Levels of detail in video games have issues in practice" },
     { id: 53, text: "Implementation issues do not detract from the overall metaphor" },
+
     { id: 54, text: "Some insights from marking up the logic in this post" },
     { id: 55, text: "The process was painful, but likely fixable" },
     { id: 56, text: "The steps I underwent to markup the logic in this post" },
@@ -66,6 +67,13 @@ const nodes = [
     { id: 58, text: "The largest source of pain is from marking up the text to extract the logic graph" },
     { id: 59, text: "Making a GUI should solve the pain of marking up the text to extract the logic graph" },
     { id: 60, text: "The largest source of pain is likely fixable" },
+
+    { id: 61, text: "Logically marking up this text helped me clarify my thoughts" },
+    { id: 62, text: "Writing clarifies thought" },
+    { id: 63, text: "Writing leads me to increased strength of belief" },
+    { id: 64, text: "Writing increases the strength of my beliefs without adequately testing them" },
+    { id: 65, text: "Logically marking-up my beliefs helped me test them" },
+    { id: 66, text: "Logically marking-up my beliefs was a needed complement to writing them down" },
 ];
 
 const CLAIM = "claim"
@@ -145,4 +153,13 @@ const links = [
     { source: 58, target: 60, kind: CLAIM },
     { source: 59, target: 60, kind: CLAIM },
     { source: 60, target: 55, kind: CLAIM },
+
+    { source: 61, target: 54, kind: CLAIM },
+    { source: 62, target: 63, kind: CLAIM },
+    { source: 63, target: 64, kind: CLAIM },
+    { source: 65, target: 66, kind: CLAIM },
+    { source: 64, target: 66, kind: CLAIM },
+    { source: 66, target: 61, kind: CLAIM },
+
+
 ];
