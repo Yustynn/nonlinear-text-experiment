@@ -44,13 +44,13 @@ const nodes = [
     { id: 39, text: "Example of reading the 'claim' link type" },
 
     { id: 40, text: "Marking the main conclusion as a focal point helps to orient the reader" },
-    { id: 41, text: "Showing the path from the current point in content to the main conclusion makes text more understandable." },
+    { id: 41, text: "Showing path to main conclusion increases understandability" },
     { id: 42, text: "Limitation: there may be multiple relevant focal points, not just the main conclusion" },
     { id: 43, text: "A future extension should allow for multiple focal points" },
 
     { id: 44, text: "Switching between levels of detail is desirable for the reader" },
     { id: 45, text: "Levels of detail is a common optimization used in video games to reduce graphics rendering cost" },
-    { id: 52, text: "Levels of detail work in video games because the player doesn't care about non-local elements" },
+    { id: 52, text: "This works because the player doesn't care about non-local elements" },
     { id: 54, text: "The reader is similar to the player in not caring about non-local elements" },
     { id: 46, text: "This experiment uses nodes marked as keypoints to enable its High Level view" },
     { id: 47, text: "Possible future extensions to the levels of detail system" },
@@ -74,6 +74,24 @@ const nodes = [
     { id: 64, text: "Writing increases the strength of my beliefs without adequately testing them" },
     { id: 65, text: "Logically marking-up my beliefs helped me test them" },
     { id: 66, text: "Logically marking-up my beliefs was a needed complement to writing them down" },
+
+    { id: 67, text: "The logical markup is still subjective" },
+    { id: 68, text: "The logical markup is not formal and not fully unambiguous" },
+    { id: 69, text: "Node text choice is subjective" },
+    { id: 70, text: "Link type choice is subjective" },
+    { id: 71, text: "Neither channel purely presents logic xor rhetoric" },
+
+    { id: 72, text: "Additional thoughts" },
+
+    { id: 73, text: "Structural comments are promising" },
+    { id: 74, text: "Logical channel enables greater specificity in comments" },
+    { id: 75, text: "This is a future extension" },
+    { id: 76, text: "Specifying content or structure when commenting is useful" },
+    { id: 77, text: "Writers generate better comments" },
+    { id: 78, text: "Readers understand comments better" },
+    { id: 79, text: "New way of discovering relevant comments" },
+    { id: 80, text: "YouTube replays comments made at particular timestamps" },
+    { id: 81, text: "Can show comments related to particular node" },
 ];
 
 const CLAIM = "claim"
@@ -160,6 +178,9 @@ const links = [
     { source: 65, target: 66, kind: CLAIM },
     { source: 64, target: 66, kind: CLAIM },
     { source: 66, target: 61, kind: CLAIM },
+
+    { source: 66, target: 61, kind: CLAIM },
+
 
 
 ];
