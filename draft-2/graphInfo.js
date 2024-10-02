@@ -92,6 +92,7 @@ const nodes = [
     { id: 79, text: "New way of discovering relevant comments" },
     { id: 80, text: "YouTube replays comments made at particular timestamps" },
     { id: 81, text: "Can show comments related to particular node" },
+    { id: 82, text: "Timestamp-based comment discovery is analogous to node-based comment discovery" },
 ];
 
 const CLAIM = "claim"
@@ -181,6 +182,24 @@ const links = [
 
     { source: 66, target: 61, kind: CLAIM },
 
+    { source: 67, target: 54, kind: CLAIM },
+    { source: 68, target: 67, kind: CLAIM },
+    { source: 69, target: 68, kind: CLAIM },
+    { source: 70, target: 68, kind: CLAIM },
+    { source: 67, target: 71, kind: CLAIM },
+
+    { source: 72, target: 10, kind: CLAIM },
+
+    { source: 73, target: 72, kind: CLAIM },
+    { source: 74, target: 73, kind: CLAIM },
+    { source: 75, target: 73, kind: CONSTRAINT },
+    { source: 76, target: 73, kind: CLAIM },
+    { source: 77, target: 76, kind: CLAIM },
+    { source: 78, target: 76, kind: CLAIM },
+    { source: 79, target: 74, kind: CLAIM },
+    { source: 80, target: 82, kind: CLAIM },
+    { source: 81, target: 79, kind: CLAIM },
+    { source: 81, target: 82, kind: CLAIM },
 
 
 ];
