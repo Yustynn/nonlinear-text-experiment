@@ -50,6 +50,7 @@ function findNearestNodeEl(el) {
 }
 
 function setSelected(el) {
+    console.log("Target", el)
     function extractTranslateValues(translateString) {
         const regex = /translate\(([^,]+),([^\)]+)\)/;
         const match = translateString.match(regex);
@@ -64,6 +65,7 @@ function setSelected(el) {
 
     const nodeEl = findNearestNodeEl(el);
     const id = +nodeEl.getAttribute("node-id");
+    console.log("Target id", id)
     renderPartialGraph(id)
     renderKeypointGraph(id)
 

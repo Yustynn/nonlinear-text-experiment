@@ -153,7 +153,6 @@ function renderKeypointGraph(nodeId) {
     const node = g.node(nodeId);
     
     const rectPartial = document.querySelector(`#full-graph g.node-${nodeId} > rect`);
-    console.log("rectPartial", rectPartial);
     const { x, y } = extractTranslateValues(rectPartial.parentElement.getAttribute("transform"));
     const svg_ = document.querySelector("svg");
     const w = svg_.clientWidth;
