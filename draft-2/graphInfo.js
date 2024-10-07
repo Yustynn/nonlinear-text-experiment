@@ -94,7 +94,8 @@ const nodes = [
     { id: 81, text: "Can show comments related to particular node" },
     { id: 82, text: "Timestamp-based comment discovery is analogous to node-based comment discovery" },
 
-    { id: 83, text: "Argument against automatic extraction of logical graph from text" },
+    { id: 906, text: "Argument in favor of automated logical graph extraction" },
+    { id: 83, text: "Automated logical graph extraction should sometimes not be done, depsite being possible" },
     { id: 84, text: "Automatic extraction for arbitrary text can only be useful" },
     { id: 85, text: "At worst, automatic extraction is not harmful" },
     { id: 86, text: "AI is advanced enough to do automatic extraction" },
@@ -132,17 +133,23 @@ const nodes = [
     { id: 111, text: "Even in counting numbers, people internally use different procedures" },
     { id: 112, text: "Evidence for difference in procedures for counting numbers" },
 
+    { id: 904, text: "The logical graph may not be adopted due to unfamiliarity" },
     { id: 113, text: "New technology is often not adopted" },
     { id: 114, text: "Example of a reader failing to adopt the graph" },
     { id: 115, text: "Failure to get mainstream adoption would be sad" },
     { id: 116, text: "I benefit from this, so I think others would too" },
     { id: 117, text: "Main aim is to build better tech for myself" },
+    { id: 905, text: "Main aim is ultimately unaffected by lack of adoption" },
 
     { id: 118, text: "Limitations" },
-    { id: 119, text: "Logical graph is not applicable to poems" },
+    { id: 119, text: "Example of poetry" },
     { id: 120, text: "Logical graph is not applicable to all texts" },
     { id: 121, text: "Some important text has non-logical primary value" },
-    { id: 122, text: "Increasing the precedence of logic for these makes the text worse" },
+    { id: 122, text: "Increasing role of logic for some texts makes value extraction harder" },
+    { id: 144, text: "Value in psychological imagery and feelings, not logic" },
+    { id: 145, text: "Value of some text is in the reader's journey to disambiguate it" },
+    { id: 146, text: "Example of zen koans" },
+    { id: 147, text: "Increasing clarity for some texts destroys their value" },
 
     { id: 123, text: "Overall project: create modern tools to increase individual agency" },
     { id: 124, text: "Technology scope evolves faster than information scope" },
@@ -173,6 +180,7 @@ const ANALYSIS = "analysis"
 const ARTEFACT = "artefact"
 const CONSTRAINT = "constraint"
 const EXAMPLE = "example"
+const PART = "part"
 
 
 const links = [
@@ -274,10 +282,13 @@ const links = [
     { source: 81, target: 79, kind: CLAIM },
     { source: 81, target: 82, kind: CLAIM },
 
+    { source: 83, target: 906, kind: ANALYSIS },
     { source: 83, target: 72, kind: CLAIM },
     { source: 84, target: 88, kind: CLAIM },
+    { source: 84, target: 906, kind: CLAIM },
     { source: 85, target: 84, kind: CLAIM },
     { source: 86, target: 901, kind: CLAIM },
+    { source: 901, target: 83, kind: CLAIM },
     { source: 87, target: 86, kind: CLAIM },
     { source: 89, target: 83, kind: CLAIM },
     { source: 90, target: 89, kind: CLAIM },
@@ -310,5 +321,44 @@ const links = [
     { source: 111, target: 110, kind: CLAIM },
     { source: 112, target: 111, kind: CLAIM },
 
+    { source: 904, target: 107, kind: CLAIM },
+    { source: 113, target: 904, kind: CLAIM },
+    { source: 114, target: 113, kind: CLAIM },
+    { source: 115, target: 904, kind: ANALYSIS },
+    { source: 116, target: 115, kind: CLAIM },
+    { source: 905, target: 115, kind: ANALYSIS },
+    { source: 117, target: 905, kind: CLAIM },
 
+    { source: 118, target: 10, kind: ANALYSIS },
+    { source: 119, target: 121, kind: CLAIM },
+    { source: 120, target: 118, kind: CLAIM },
+    { source: 121, target: 122, kind: CLAIM },
+    { source: 122, target: 120, kind: CLAIM },
+    { source: 144, target: 121, kind: CLAIM },
+
+    { source: 145, target: 147, kind: CLAIM },
+    { source: 146, target: 145, kind: CLAIM },
+    { source: 147, target: 120, kind: CLAIM },
+
+    { source: 10, target: 123, kind: CLAIM },
+    { source: 124, target: 125, kind: CLAIM },
+    { source: 125, target: 123, kind: CLAIM },
+    { source: 127, target: 126, kind: CLAIM },
+    { source: 123, target: 126, kind: CLAIM },
+
+    { source: 128, target: 10, kind: CLAIM },
+    { source: 129, target: 128, kind: PART },
+    { source: 130, target: 129, kind: PART },
+    { source: 131, target: 130, kind: EXAMPLE },
+    { source: 132, target: 130, kind: EXAMPLE },
+    { source: 133, target: 132, kind: EXAMPLE },
+    { source: 134, target: 132, kind: EXAMPLE },
+    { source: 135, target: 129, kind: PART },
+    { source: 136, target: 135, kind: CLAIM },
+    { source: 137, target: 135, kind: CLAIM },
+    { source: 139, target: 135, kind: ANALYSIS },
+
+    { source: 140, target: 128, kind: PART },
+    { source: 141, target: 140, kind: PART },
+    { source: 141, target: 142, kind: CLAIM },
 ];
