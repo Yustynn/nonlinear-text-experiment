@@ -23,7 +23,7 @@ const nodes = [
     { id: 156, text: "Link implication by sentence adjacency is not reliable" },
     
 
-    { id: 5, text: "Rhetoric has too much impact on the believability of information in pure text"},
+    { id: 5, text: "Both rhetoric and logic influence our belief of text greatly"},
     { id: 6, text: "The reader must follow the author's train of thought in pure text"},
     { id: 7, text: "It's difficult to get an understanding of high-level points in pure text"},
     { id: 8, text: "Searching for specific information is difficult in pure text"},
