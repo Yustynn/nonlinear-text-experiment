@@ -57,7 +57,11 @@ function renderPartialGraph(nodeId) {
     }
 
     for (let link of selLinks) {
-        g.setEdge(link.source, link.target, { label: link.kind, class: link.kind });
+        g.setEdge(
+            link.source,
+            link.target,
+            { label: link.kind, class: link.kind }
+        );
     }
 
 

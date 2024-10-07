@@ -3,10 +3,10 @@ const KEYPOINT = "keypoint"
 
 const nodes = [
     { id: 1, text: "Text contains many things-worth-knowing"},
-    { id: 2, text: "Retrieving information from text is hard"},
+    { id: 2, text: "Retrieving information from text is hard", kind: KEYPOINT},
     { id: 3, text: "Problems with getting information out of pure text"},
 
-    { id: 911, text: "Text is hard to analyze due to structure being unclear"},
+    { id: 911, text: "Text is hard to analyze due to structure being unclear", kind: KEYPOINT},
     { id: 4, text: "Seeing the structure of an argument in pure text is difficult"},
     { id: 148, text: "An argument's structure is important to analyzing it" },
     { id: 149, text: "Due to text's linearity" },
@@ -23,13 +23,13 @@ const nodes = [
     { id: 156, text: "Link implication by sentence adjacency is not reliable" },
     
 
-    { id: 5, text: "Both rhetoric and logic influence our belief of text greatly"},
-    { id: 6, text: "The reader must follow the author's train of thought in pure text"},
-    { id: 7, text: "It's difficult to get an understanding of high-level points in pure text"},
-    { id: 8, text: "Searching for specific information is difficult in pure text"},
-    { id: 9, text: "Search might be solved through LLMs and RAG"},
-    { id: 10, text: "This post is an experimental attempt to fix many problems with pure text", kind: KEYPOINT },
-    { id: 11, text: "Rhetoric is useful" },
+    { id: 5, text: "Both rhetoric and logic influence our belief of text greatly", kind: KEYPOINT },
+    { id: 6, text: "The reader must follow the author's train of thought in pure text", kind: KEYPOINT },
+    { id: 7, text: "It's difficult to get an understanding of high-level points in pure text", kind: KEYPOINT },
+    { id: 8, text: "Searching for specific information is difficult in pure text", kind: KEYPOINT },
+    { id: 9, text: "Search might be solved through LLMs and RAG", kind: KEYPOINT},
+    { id: 10, text: "This post is an experimental attempt to fix many problems with pure text", kind: MAIN_CONCLUSION },
+    { id: 11, text: "Rhetoric is useful", kind: KEYPOINT },
     { id: 12, text: "Language is necessarily imprecise" },
     { id: 13, text: "Good communication helps orientate the reader in the direction of the intended meaning" },
     { id: 14, text: "Rhetoric helps to orientate the reader in the approximate direction of the intended meaning" },
@@ -39,7 +39,7 @@ const nodes = [
     { id: 18, text: "Understanding something does not make it true" },
     { id: 19, text: "Rhetoric makes logic harder to understand" },
     { id: 20, text: "The solution should preserve both rhetoric and logic" },
-    { id: 21, text: "Proposal for a logic-forward channel" },
+    { id: 21, text: "Proposal for a logic-forward channel", kind: KEYPOINT },
     { id: 22, text: "Text should be preserved for rhetoric" },
 
     { id: 23, text: "The logical channel should be visually adjacent to text" },
@@ -49,7 +49,7 @@ const nodes = [
     { id: 27, text: "The logical channel can make explicit the elements that are textually implicit" },
     { id: 28, text: "The logical channel allows for links within content to be clearer" },
     { id: 29, text: "Logic needs a more complex channel than rhetoric" },
-    { id: 30, text: "Requirements for the logical channel" },
+    { id: 30, text: "Requirements for the logical channel", kind: KEYPOINT },
     { id: 31, text: "A predefined structure" },
     { id: 32, text: "Nodes represent a single point in the content" },
     { id: 33, text: "Links have direction and establish relationships between nodes" },
@@ -60,12 +60,12 @@ const nodes = [
     { id: 38, text: "Link type: constraint" },
     { id: 39, text: "Example of reading the 'claim' link type" },
 
-    { id: 40, text: "Marking the main conclusion as a focal point helps to orient the reader" },
+    { id: 40, text: "Marking the main conclusion as a focal point helps to orient the reader", kind: KEYPOINT },
     { id: 41, text: "Showing path to main conclusion increases understandability" },
     { id: 42, text: "Limitation: there may be multiple relevant focal points, not just the main conclusion" },
     { id: 43, text: "A future extension should allow for multiple focal points" },
 
-    { id: 44, text: "Switching between levels of detail is desirable for the reader" },
+    { id: 44, text: "Switching between levels of detail is desirable for the reader", kind: KEYPOINT },
     { id: 45, text: "Levels of detail is a common optimization used in video games to reduce graphics rendering cost" },
     { id: 52, text: "This works because the player doesn't care about non-local elements" },
     { id: 54, text: "The reader is similar to the player in not caring about non-local elements" },
@@ -77,30 +77,30 @@ const nodes = [
     { id: 51, text: "Levels of detail in video games have issues in practice" },
     { id: 53, text: "Implementation issues do not detract from the overall metaphor" },
 
-    { id: 54, text: "Some insights from marking up the logic in this post" },
-    { id: 55, text: "The process was painful, but likely fixable" },
+    { id: 54, text: "Some insights from marking up the logic in this post", kind: KEYPOINT },
+    { id: 55, text: "The process was painful, but likely fixable", kind: KEYPOINT },
     { id: 56, text: "The steps I underwent to markup the logic in this post" },
     { id: 57, text: "The visualization code does not count as pain as it was a one-time cost" },
     { id: 58, text: "The largest source of pain is from marking up the text to extract the logic graph" },
     { id: 59, text: "Making a GUI should solve the pain of marking up the text to extract the logic graph" },
     { id: 60, text: "The largest source of pain is likely fixable" },
 
-    { id: 61, text: "Logically marking up this text helped me clarify my thoughts" },
+    { id: 61, text: "Logically marking up this text helped me clarify my thoughts", kind: KEYPOINT },
     { id: 62, text: "Writing clarifies thought" },
     { id: 63, text: "Writing leads me to increased strength of belief" },
     { id: 64, text: "Writing increases the strength of my beliefs without adequately testing them" },
     { id: 65, text: "Logically marking-up my beliefs helped me test them" },
     { id: 66, text: "Logically marking-up my beliefs was a needed complement to writing them down" },
 
-    { id: 67, text: "The logical markup is still subjective" },
+    { id: 67, text: "The logical markup is still subjective", kind: KEYPOINT },
     { id: 68, text: "The logical markup is not formal and not fully unambiguous" },
     { id: 69, text: "Node text choice is subjective" },
     { id: 70, text: "Link type choice is subjective" },
     { id: 71, text: "Neither channel purely presents logic xor rhetoric" },
 
-    { id: 72, text: "Additional thoughts" },
+    { id: 72, text: "Additional thoughts", kind: KEYPOINT },
 
-    { id: 73, text: "Structural comments are promising" },
+    { id: 73, text: "Structural comments are promising", kind: KEYPOINT },
     { id: 74, text: "Logical channel enables greater specificity in comments" },
     { id: 75, text: "This is a future extension" },
     { id: 76, text: "Specifying content or structure when commenting is useful" },
@@ -112,7 +112,7 @@ const nodes = [
     { id: 82, text: "Timestamp-based comment discovery is analogous to node-based comment discovery" },
 
     { id: 906, text: "Argument in favor of automated logical graph extraction" },
-    { id: 83, text: "Automated logical graph extraction should sometimes not be done, depsite being possible" },
+    { id: 83, text: "Automated logical graph extraction should sometimes not be done, depsite being possible", kind: KEYPOINT },
     { id: 84, text: "Automatic extraction for arbitrary text can only be useful" },
     { id: 85, text: "At worst, automatic extraction is not harmful" },
     { id: 86, text: "AI is advanced enough to do automatic extraction" },
@@ -130,10 +130,10 @@ const nodes = [
     { id: 96, text: "I am always changing and cannot be fully inferred from past data" },
     { id: 97, text: "I haven't yet given automated processes enough past data to infer me from" },
 
-    { id: 98, text: "Problems and limitations" },
+    { id: 98, text: "Problems and limitations", kind: KEYPOINT },
 
-    { id: 99, text: "Problems that I believe are solvable" },
-    { id: 100, text: "There are many interface issues" },
+    { id: 99, text: "Problems that I believe are solvable", kind: KEYPOINT },
+    { id: 100, text: "There are many interface issues", kind: KEYPOINT },
     { id: 101, text: "Hovering over text can unintentionally change the graph" },
     { id: 102, text: "Transitions between graph displays are not fluid" },
     { id: 103, text: "Clicking on graph nodes does not sync the text position to it" },
@@ -141,8 +141,8 @@ const nodes = [
     { id: 105, text: "These issues should be solvable" },
     { id: 106, text: "I will not address solutions in this post" },
 
-    { id: 107, text: "Potentially unsolvable problems" },
-    { id: 903, text: "Having a logic graph might not appeal to most people" },
+    { id: 107, text: "Potentially unsolvable problems", kind: KEYPOINT },
+    { id: 903, text: "Having a logic graph might not appeal to most people", kind: KEYPOINT },
     { id: 108, text: "The logic graph appeals to me" },
     { id: 109, text: "The logic graph is similar to how I want to see text as I read it" },
     { id: 110, text: "Me liking the logic graph does not mean that other people like it" },
@@ -150,7 +150,7 @@ const nodes = [
     { id: 111, text: "Even in counting numbers, people internally use different procedures" },
     { id: 112, text: "Evidence for difference in procedures for counting numbers" },
 
-    { id: 904, text: "The logical graph may not be adopted due to unfamiliarity" },
+    { id: 904, text: "The logical graph may not be adopted due to unfamiliarity", kind: KEYPOINT },
     { id: 113, text: "New technology is often not adopted" },
     { id: 114, text: "Example of a reader failing to adopt the graph" },
     { id: 115, text: "Failure to get mainstream adoption would be sad" },
@@ -158,9 +158,9 @@ const nodes = [
     { id: 117, text: "Main aim is to build better tech for myself" },
     { id: 905, text: "Main aim is ultimately unaffected by lack of adoption" },
 
-    { id: 118, text: "Limitations" },
+    { id: 118, text: "Limitations", kind: KEYPOINT },
     { id: 119, text: "Example of poetry" },
-    { id: 120, text: "Logical graph is not applicable to all texts" },
+    { id: 120, text: "Logical graph is not applicable to all texts", kind: KEYPOINT },
     { id: 121, text: "Some important text has non-logical primary value" },
     { id: 122, text: "Increasing role of logic for some texts makes value extraction harder" },
     { id: 144, text: "Value in psychological imagery and feelings, not logic" },
@@ -174,9 +174,9 @@ const nodes = [
     { id: 126, text: "I want my mind to be a beautiful place" },
     { id: 127, text: "Beautiful minds have both rhetoric and logic maximized" },
 
-    { id: 128, text: "Additional related items" },
+    { id: 128, text: "Additional related items", kind: KEYPOINT },
 
-    { id: 129, text: "Relevant ideas" },
+    { id: 129, text: "Relevant ideas", kind: KEYPOINT },
     { id: 130, text: "Links to internal content" },
     { id: 131, text: "Wikipedia" },
     { id: 132, text: "Obsidian" },
@@ -187,7 +187,7 @@ const nodes = [
     { id: 137, text: "Semantic Web never happened" },
     { id: 139, text: "LLMs make the Semantic Web redundant" },
 
-    { id: 140, text: "Relevant readings" },
+    { id: 140, text: "Relevant readings", kind: KEYPOINT },
     { id: 141, text: "Plato's Gorgias" },
     { id: 142, text: "Debate about whether rhetoric is the greatest skill of all" },
 ];

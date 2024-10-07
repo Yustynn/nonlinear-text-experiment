@@ -65,14 +65,21 @@ function setSelected(el) {
     const nodeEl = findNearestNodeEl(el);
     const id = +nodeEl.getAttribute("node-id");
     renderPartialGraph(id)
+    renderKeypointGraph(id)
+
+    // console.log(dijkstraShortestPathWithLinks(links, id, 10))
+
+
 
     const priorSelected = document.querySelectorAll(".selected");
     if (priorSelected.length > 0) priorSelected.forEach(s => s.classList.remove("selected"));
 
     nodeEl.classList.add("selected");
 
-    const rectFull = document.querySelector(`#full-graph g.node-${id} > rect`);
-    rectFull.classList.add("selected");
+    if (false) {
+        const rectFull = document.querySelector(`#full-graph g.node-${id} > rect`);
+        rectFull.classList.add("selected");
+    }
     const rectPartial = document.querySelector(`#partial-graph g.node-${id} > rect`);
     rectPartial.classList.add("selected");
 

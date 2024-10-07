@@ -45,12 +45,13 @@
             fill: #00ffd0;
         }
 
-        g.assumption > path {
+        g.assumption > path, g.assumption > marker {
             stroke: rgb(58, 137, 234);
         }
 
-        g.claim > path {
-            stroke: black;
+        g.claim > path, g.claim > marker {
+            stroke: blue;
+            fill: blue;
         }
 
         g.extension > path {
@@ -71,6 +72,10 @@
 
         g.argument-by-analogy > path {
             stroke: rgb(233, 47, 183);
+        }
+
+        g.part > path {
+            stroke: grey;
         }
 
         text {
@@ -295,8 +300,9 @@
     </div>
     <script src="config.js"></script>
     <script src="graphInfo.js"></script>
-    <script src="fullGraph.js"></script>
+    <!-- <script src="fullGraph.js"></script> -->
     <script src="partialGraph.js"></script>
+    <script src="keypointGraph.js"></script>
     <script src="chooseNode.js"></script>
 </body>
 </html>

@@ -3,6 +3,6 @@ const config = {
         autoPan: false
     },
     partialGraph: {
-        depth: 1,
+        depth: 2,
     }
 }
