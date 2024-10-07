@@ -6,7 +6,7 @@ const nodes = [
     { id: 2, text: "Retrieving information from text is hard"},
     { id: 3, text: "Problems with getting information out of pure text"},
 
-    { id: 909, text: "Text is hard to analyze due to structure being unclear"},
+    { id: 911, text: "Text is hard to analyze due to structure being unclear"},
     { id: 4, text: "Seeing the structure of an argument in pure text is difficult"},
     { id: 148, text: "An argument's structure is important to analyzing it" },
     { id: 149, text: "Due to text's linearity" },
@@ -203,9 +203,9 @@ const PART = "part"
 const links = [
     { source: 1, target: 3, kind: CLAIM },
     { source: 3, target: 2, kind: ANALYSIS },
-    { source: 909, target: 3, kind: PART },
-    { source: 4, target: 909, kind: CLAIM },
-    { source: 148, target: 909, kind: CLAIM },
+    { source: 911, target: 3, kind: PART },
+    { source: 4, target: 911, kind: CLAIM },
+    { source: 148, target: 911, kind: CLAIM },
     { source: 149, target: 4, kind: CLAIM },
     { source: 150, target: 149, kind: EXAMPLE },
     { source: 151, target: 907, kind: EXAMPLE },
