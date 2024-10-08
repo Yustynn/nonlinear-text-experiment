@@ -408,14 +408,14 @@ const links = [
     { source: 117, target: 905, kind: CLAIM },
 
     { source: 118, target: 10, kind: ANALYSIS },
-    { source: 119, target: 121, kind: CLAIM },
+    { source: 119, target: 121, kind: EXAMPLE },
     { source: 120, target: 118, kind: PART },
     { source: 121, target: 122, kind: CLAIM },
     { source: 122, target: 120, kind: CLAIM },
     { source: 144, target: 121, kind: CLAIM },
 
     { source: 145, target: 147, kind: CLAIM },
-    { source: 146, target: 145, kind: CLAIM },
+    { source: 146, target: 145, kind: EXAMPLE },
     { source: 147, target: 120, kind: CLAIM },
 
     { source: 10, target: 123, kind: CLAIM },
