@@ -1,4 +1,5 @@
 function renderPartialGraph(nodeId) {
+    const TITLE_TEXT = "Logic graph of local region"
     if (nodeId === undefined) {
         return;
     }
@@ -79,6 +80,8 @@ function renderPartialGraph(nodeId) {
     const svg = d3.select("#partial-graph")
         
     svg.selectAll("*").remove();
+    addSvgTitle(svg, TITLE_TEXT);
+
     const svgGroup = svg.append("g");
 
     // Add zoom and pan behavior
@@ -122,4 +125,5 @@ function renderPartialGraph(nodeId) {
 
     var transform = d3.zoomIdentity.translate(tx, ty).scale(1);
     svg.transition().duration(0).call(zoom.transform, transform);
+    addSvgTitle(svg, TITLE_TEXT);
 }

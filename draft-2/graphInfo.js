@@ -24,6 +24,13 @@ const nodes = [
     
 
     { id: 5, text: "Rhetoric and logic are often conflated in the mind", kind: KEYPOINT },
+    { id: 157, text: "Rhetoric obstructs good beliefs" },
+    { id: 158, text: "Bad logic is believed due to good rhetoric" },
+    { id: 159, text: "Good logic is never found due to bad rhetoric" },
+    { id: 160, text: "Linear text compounds this problem" },
+    { id: 161, text: "Linear text forefronts rhetoric" },
+    { id: 162, text: "Linear text backgrounds logic" },
+
     { id: 6, text: "Readers must follow the author's train of thought in pure text", kind: KEYPOINT },
     { id: 7, text: "It's difficult to get an understanding of high-level points in pure text", kind: KEYPOINT },
     { id: 8, text: "Searching for specific information is difficult in pure text", kind: KEYPOINT },
@@ -193,11 +200,13 @@ const nodes = [
 ];
 
 const CLAIM = "claim"
+const CONTEXT = "context"
 const ANALYSIS = "analysis"
 const ARTEFACT = "artefact"
 const CONSTRAINT = "constraint"
 const EXAMPLE = "example"
 const PART = "part"
+const EXTENSION = "extension"
 
 
 const links = [
@@ -223,7 +232,9 @@ const links = [
     { source: 156, target: 910, kind: ANALYSIS },
 
 
-    { source: 5, target: 3, kind: PART },
+    { source: 157, target: 3, kind: PART },
+    { source: 5, target: 157, kind: CLAIM },
+
     { source: 6, target: 3, kind: PART },
     { source: 7, target: 3, kind: PART },
     { source: 8, target: 3, kind: PART },
