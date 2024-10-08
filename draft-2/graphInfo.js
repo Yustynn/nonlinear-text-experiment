@@ -23,8 +23,8 @@ const nodes = [
     { id: 156, text: "Link implication by sentence adjacency is not reliable" },
     
 
-    { id: 5, text: "Rhetoric and logic are often conflated in the mind" },
     { id: 912, text: "Text obfuscates logic through rhetoric", kind: KEYPOINT },
+    { id: 5, text: "Rhetoric and logic are often conflated in the mind" },
     { id: 157, text: "Rhetoric obstructs good beliefs" },
     { id: 158, text: "Bad logic is believed due to good rhetoric" },
     { id: 159, text: "Good logic is never found due to bad rhetoric" },
@@ -340,7 +340,7 @@ const links = [
 
     { source: 72, target: 10, kind: CLAIM },
 
-    { source: 73, target: 72, kind: CLAIM },
+    { source: 73, target: 72, kind: PART },
     { source: 74, target: 73, kind: CLAIM },
     { source: 75, target: 73, kind: CONSTRAINT },
     { source: 76, target: 73, kind: CLAIM },
@@ -351,8 +351,8 @@ const links = [
     { source: 81, target: 79, kind: CLAIM },
     { source: 81, target: 82, kind: CLAIM },
 
+    { source: 83, target: 72, kind: PART },
     { source: 83, target: 906, kind: ANALYSIS },
-    { source: 83, target: 72, kind: CLAIM },
     { source: 84, target: 88, kind: CLAIM },
     { source: 84, target: 906, kind: CLAIM },
     { source: 85, target: 84, kind: CLAIM },
@@ -361,8 +361,9 @@ const links = [
     { source: 87, target: 86, kind: CLAIM },
     { source: 89, target: 83, kind: CLAIM },
     { source: 90, target: 89, kind: CLAIM },
-    { source: 91, target: 90, kind: CLAIM },
-    { source: 92, target: 90, kind: CLAIM },
+
+    { source: 91, target: 90, kind: PART },
+    { source: 92, target: 90, kind: PART },
     { source: 93, target: 92, kind: CLAIM },
     { source: 93, target: 902, kind: CLAIM },
     { source: 94, target: 902, kind: CLAIM },
@@ -372,25 +373,25 @@ const links = [
 
     { source: 98, target: 10, kind: ANALYSIS },
 
-    { source: 99, target: 98, kind: CLAIM },
-    { source: 100, target: 99, kind: CLAIM },
-    { source: 101, target: 100, kind: CLAIM },
-    { source: 102, target: 100, kind: CLAIM },
-    { source: 103, target: 100, kind: CLAIM },
-    { source: 104, target: 100, kind: CLAIM },
+    { source: 99, target: 98, kind: PART },
+    { source: 100, target: 99, kind: PART },
+    { source: 101, target: 100, kind: EXAMPLE },
+    { source: 102, target: 100, kind: EXAMPLE },
+    { source: 103, target: 100, kind: EXAMPLE },
+    { source: 104, target: 100, kind: EXAMPLE },
     { source: 100, target: 105, kind: CLAIM },
     { source: 105, target: 99, kind: CLAIM },
     { source: 99, target: 106, kind: CLAIM },
 
-    { source: 107, target: 98, kind: CLAIM },
+    { source: 107, target: 98, kind: PART },
     { source: 108, target: 110, kind: CLAIM },
-    { source: 903, target: 107, kind: CLAIM },
+    { source: 903, target: 107, kind: PART },
     { source: 109, target: 108, kind: CLAIM },
     { source: 143, target: 110, kind: CLAIM },
     { source: 111, target: 110, kind: CLAIM },
     { source: 112, target: 111, kind: CLAIM },
 
-    { source: 904, target: 107, kind: CLAIM },
+    { source: 904, target: 107, kind: PART },
     { source: 113, target: 904, kind: CLAIM },
     { source: 114, target: 113, kind: CLAIM },
     { source: 115, target: 904, kind: ANALYSIS },
@@ -400,7 +401,7 @@ const links = [
 
     { source: 118, target: 10, kind: ANALYSIS },
     { source: 119, target: 121, kind: CLAIM },
-    { source: 120, target: 118, kind: CLAIM },
+    { source: 120, target: 118, kind: PART },
     { source: 121, target: 122, kind: CLAIM },
     { source: 122, target: 120, kind: CLAIM },
     { source: 144, target: 121, kind: CLAIM },
