@@ -1,5 +1,7 @@
 function renderKeypointGraph(nodeId) {
     const TITLE_TEXT = "Path from current point to main conclusion"
+    const MAIN_CONCLUSION_ID = 10
+
     if (nodeId === undefined) {
         return;
     }
@@ -22,9 +24,11 @@ function renderKeypointGraph(nodeId) {
         adjacency[target].push(source);
     }
 
-    const { nodes: pathNodes, links: pathLinks } = dijkstraShortestPathWithLinks(nodes, links, nodeId, 10);
+    const { nodes: pathNodes } = dijkstraShortestPathWithLinks(nodes, links, nodeId, MAIN_CONCLUSION_ID);
 
     const selNodes = pathNodes.filter(n => n.kind === KEYPOINT || n.kind === MAIN_CONCLUSION || n.id == nodeId);
+    if (selNodes[0].id != MAIN_CONCLUSION_ID) selNodes.reverse()
+    console.log(selNodes.map(n => n.id))
     const selLinks = []
     for (let i = 0; i < selNodes.length - 1; i++) {
         selLinks.push({ source: selNodes[i].id, target: selNodes[i+1].id });
@@ -88,16 +92,13 @@ function renderKeypointGraph(nodeId) {
 
 
 
-    const node = g.node(nodeId);
-    
-    const rectPartial = document.querySelector(`#full-graph g.node-${nodeId} > rect`);
+    const rectPartial = document.querySelector(`#full-graph g.node-${MAIN_CONCLUSION_ID} > rect`);
     const { x, y } = extractTranslateValues(rectPartial.parentElement.getAttribute("transform"));
     const svg_ = document.querySelector("svg");
     const w = svg_.clientWidth;
-    const h = svg_.clientHeight;
 
     const tx = w/2 - x;
-    const ty = h/2 - y;
+    const ty = y + 30;
 
 
     var transform = d3.zoomIdentity.translate(tx, ty).scale(1);

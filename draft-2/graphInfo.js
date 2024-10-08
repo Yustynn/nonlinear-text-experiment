@@ -23,15 +23,23 @@ const nodes = [
     { id: 156, text: "Link implication by sentence adjacency is not reliable" },
     
 
-    { id: 5, text: "Rhetoric and logic are often conflated in the mind", kind: KEYPOINT },
+    { id: 5, text: "Rhetoric and logic are often conflated in the mind" },
+    { id: 912, text: "Text obfuscates logic through rhetoric", kind: KEYPOINT },
     { id: 157, text: "Rhetoric obstructs good beliefs" },
     { id: 158, text: "Bad logic is believed due to good rhetoric" },
     { id: 159, text: "Good logic is never found due to bad rhetoric" },
-    { id: 160, text: "Linear text compounds this problem" },
+    { id: 160, text: "Linear text compounds this rhetoric's obfuscation of logic" },
     { id: 161, text: "Linear text forefronts rhetoric" },
     { id: 162, text: "Linear text backgrounds logic" },
 
-    { id: 6, text: "Readers must follow the author's train of thought in pure text", kind: KEYPOINT },
+    { id: 6, text: "Difficult to break author's imposed content ordering", kind: KEYPOINT },
+    { id: 164, text: "Reader has own desire for particular content" },
+    { id: 165, text: "Example of desire for particular content" },
+    { id: 166, text: "Reader cannot reliably jump to desired content immediately" },
+    { id: 167, text: "Desired content immediately found only if it aligns with author's content ordering" },
+    { id: 168, text: "Reader must often read rest of text and try not to forget desire" },
+
+
     { id: 7, text: "It's difficult to get an understanding of high-level points in pure text", kind: KEYPOINT },
     { id: 8, text: "Searching for specific information is difficult in pure text", kind: KEYPOINT },
     { id: 9, text: "Search might be solved through LLMs and RAG", kind: KEYPOINT},
@@ -143,7 +151,7 @@ const nodes = [
     { id: 100, text: "Interface issues", kind: KEYPOINT },
     { id: 101, text: "Hovering over text can unintentionally change the graph" },
     { id: 102, text: "Transitions between graph displays are not fluid" },
-    { id: 103, text: "Clicking on graph nodes does not sync the text position to it" },
+    { id: 103, text: "Clicking graph node does not sync text position to it" },
     { id: 104, text: "More issues" },
     { id: 105, text: "These issues should be solvable" },
     { id: 106, text: "This post won't address solutions" },
@@ -232,10 +240,24 @@ const links = [
     { source: 156, target: 910, kind: ANALYSIS },
 
 
-    { source: 157, target: 3, kind: PART },
+    { source: 912, target: 3, kind: PART },
+    { source: 157, target: 912, kind: CLAIM },
     { source: 5, target: 157, kind: CLAIM },
+    { source: 158, target: 157, kind: CLAIM },
+    { source: 159, target: 157, kind: CLAIM },
+    { source: 159, target: 157, kind: CLAIM },
+    { source: 160, target: 912, kind: CLAIM },
+    { source: 161, target: 160, kind: CLAIM },
+    { source: 162, target: 160, kind: CLAIM },
 
-    { source: 6, target: 3, kind: PART },
+    { source: 166, target: 3, kind: PART },
+    { source: 6, target: 166, kind: CLAIM },
+    { source: 164, target: 166, kind: CLAIM },
+    { source: 165, target: 164, kind: EXAMPLE },
+    { source: 167, target: 166, kind: ANALYSIS },
+    { source: 168, target: 166, kind: ANALYSIS },
+
+
     { source: 7, target: 3, kind: PART },
     { source: 8, target: 3, kind: PART },
     { source: 9, target: 8, kind: ANALYSIS },

@@ -78,10 +78,8 @@ function setSelected(el) {
 
     nodeEl.classList.add("selected");
 
-    if (false) {
-        const rectFull = document.querySelector(`#full-graph g.node-${id} > rect`);
-        rectFull.classList.add("selected");
-    }
+    const rectFull = document.querySelector(`#full-graph g.node-${id} > rect`);
+    rectFull.classList.add("selected");
     const rectPartial = document.querySelector(`#partial-graph g.node-${id} > rect`);
     rectPartial.classList.add("selected");
 

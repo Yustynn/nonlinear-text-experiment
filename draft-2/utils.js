@@ -10,15 +10,15 @@ function addSvgTitle(svg, text) {
     // Get the bounding box of the text element
     const bbox = textElement.node().getBBox();
 
-    // Append a rectangle behind the text
-    svg.insert("rect", "text")
-        .attr("x", bbox.x - 5) // Add some padding
-        .attr("y", bbox.y - 5)
-        .attr("width", bbox.width + 10)
-        .attr("height", bbox.height + 10)
-        .attr("fill", "white")
-        // .attr("stroke", "black")
-        .attr("stroke-width", 2);
+    // // Append a rectangle behind the text
+    // svg.insert("rect", "text")
+    //     .attr("x", bbox.x - 5) // Add some padding
+    //     .attr("y", bbox.y - 5)
+    //     .attr("width", bbox.width + 10)
+    //     .attr("height", bbox.height + 10)
+    //     .attr("fill", "white")
+    //     .attr("stroke", "black")
+    //     .attr("stroke-width", 2);
 }
 
 function dijkstraShortestPathWithLinks(nodes, links, start, end) {
