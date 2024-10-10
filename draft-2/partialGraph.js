@@ -1,5 +1,5 @@
 function renderPartialGraph(nodeId) {
-    const TITLE_TEXT = "Logic graph of local region"
+    const TITLE_TEXT = `Logic graph of local region (depth=${config.partialGraph.depth})`
     if (nodeId === undefined) {
         return;
     }
@@ -13,11 +13,11 @@ function renderPartialGraph(nodeId) {
     const adjacency = {}
     for (const { source, target } of links) {
         if (adjacency[source] === undefined) {
-            adjacency[source] = [];
+            adjacency[source] = [source];
         }
         adjacency[source].push(target);
         if (adjacency[target] === undefined) {
-            adjacency[target] = [];
+            adjacency[target] = [target];
         }
         adjacency[target].push(source);
     }
