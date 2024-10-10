@@ -10,17 +10,6 @@ function renderPartialGraph(nodeId) {
     .setGraph({})
     .setDefaultEdgeLabel(function() { return {}; });
 
-    const adjacency = {}
-    for (const { source, target } of links) {
-        if (adjacency[source] === undefined) {
-            adjacency[source] = [source];
-        }
-        adjacency[source].push(target);
-        if (adjacency[target] === undefined) {
-            adjacency[target] = [target];
-        }
-        adjacency[target].push(source);
-    }
 
     function getRelevantNodes(nodeId) {
         function hasPath(from, depthRemaining, visited) {
@@ -48,8 +37,10 @@ function renderPartialGraph(nodeId) {
     }
 
     const selNodes = getRelevantNodes(nodeId);
-    const selNodeIds = selNodes.map(e => e.id);
+    const selNodeIds = selNodes.map(n => n.id);
+    console.log("selNodeIds", selNodeIds)
 
+    console.log("length of links", links.length)
     const selLinks = links.filter(e => selNodeIds.includes(e.source) && selNodeIds.includes(e.target));
     selNodeIds.push(nodeId);
 

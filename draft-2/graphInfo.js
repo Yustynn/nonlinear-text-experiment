@@ -480,3 +480,16 @@ const links = [
     { source: 182, target: 140, kind: PART },
     { source: 183, target: 182, kind: CLAIM },
 ];
+
+
+const adjacency = {}
+for (const { source, target } of links) {
+    if (adjacency[source] === undefined) {
+        adjacency[source] = [source];
+    }
+    adjacency[source].push(target);
+    if (adjacency[target] === undefined) {
+        adjacency[target] = [target];
+    }
+    adjacency[target].push(source);
+}
