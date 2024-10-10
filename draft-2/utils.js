@@ -69,3 +69,7 @@ function dijkstraShortestPathWithLinks(nodes, links, start, end) {
 
     return { nodes: pathNodes.map(id => nodes.find(n => n.id == id)), links: pathLinks };
 }
+
+function formatNodeText(node) {
+    return `[${node.id}] ${node.text}`;
+}

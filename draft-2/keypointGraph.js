@@ -35,7 +35,7 @@ function renderKeypointGraph(nodeId) {
     }
 
     for (let node of selNodes) {
-        g.setNode(node.id, { label: node.id + " " + node.text, class: "node-"+node.id });
+        g.setNode(node.id, { label: formatNodeText(node), class: "node-"+node.id });
     }
 
     for (let link of selLinks) {

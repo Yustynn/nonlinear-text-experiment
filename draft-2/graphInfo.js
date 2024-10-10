@@ -225,6 +225,9 @@ const nodes = [
     { id: 140, text: "Relevant readings", kind: KEYPOINT },
     { id: 141, text: "Plato's Gorgias" },
     { id: 142, text: "Debate about whether rhetoric is the greatest skill of all" },
+
+    { id: 182, text: "Leibniz's True Method" },
+    { id: 183, text: "A vision for universally-agreeable method of argument" },
 ];
 
 const CLAIM = "claim"
@@ -470,6 +473,10 @@ const links = [
     { source: 139, target: 135, kind: ANALYSIS },
 
     { source: 140, target: 128, kind: PART },
+
     { source: 141, target: 140, kind: PART },
     { source: 141, target: 142, kind: CLAIM },
+
+    { source: 182, target: 140, kind: PART },
+    { source: 183, target: 182, kind: CLAIM },
 ];

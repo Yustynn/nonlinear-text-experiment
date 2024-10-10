@@ -67,10 +67,7 @@ function setSelected(el) {
     const id = +nodeEl.getAttribute("node-id");
     console.log("Target id", id)
     renderPartialGraph(id)
-    renderKeypointGraph(id)
-
-    // console.log(dijkstraShortestPathWithLinks(links, id, 10))
-
+    if (!config.fullGraph.show) renderKeypointGraph(id)
 
 
     const priorSelected = document.querySelectorAll(".selected");
@@ -84,7 +81,7 @@ function setSelected(el) {
     rectPartial.classList.add("selected");
 
     
-    if (config.fullGraph.autoPan) {
+    if (config.fullGraph.show && config.fullGraph.autoPan) {
         const { x, y } = extractTranslateValues(rectFull.parentElement.getAttribute("transform"));
 
         const svg = document.querySelector("svg");

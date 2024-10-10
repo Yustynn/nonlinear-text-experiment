@@ -1,8 +1,9 @@
 const config = {
     fullGraph: {
-        autoPan: false
+        autoPan: false,
+        show: false
     },
     partialGraph: {
-        depth: 3,
+        depth: 2,
     }
 }
