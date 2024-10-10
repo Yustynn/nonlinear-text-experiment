@@ -30,7 +30,7 @@ function renderPartialGraph(nodeId) {
 
         const selNodes = []
         for (const node of nodes) {
-            if (hasPath(node.id, config.partialGraph.depth, {})) selNodes.push(node);
+            if (hasPath(node.id, config.partialGraph.depth+1, {})) selNodes.push(node);
         }
 
         return selNodes;
@@ -66,8 +66,6 @@ function renderPartialGraph(nodeId) {
     // Create the renderer
     var render = new dagreD3.render();
 
-    // Set up an SVG group so that we can translate the final graph.
-    // var svg = d3.select("#content").append("svg"),
     const svg = d3.select("#partial-graph")
         
     svg.selectAll("*").remove();
