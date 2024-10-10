@@ -9,7 +9,7 @@ const nodes = [
     { id: 911, text: "Text makes structure unclear and thus hard to analyze", kind: KEYPOINT},
     { id: 4, text: "Extracting structure from pure text is difficult"},
     { id: 148, text: "An argument's structure is important to analyzing it" },
-    { id: 149, text: "Due to text's linearity" },
+    { id: 149, text: "Text's linearity obfuscates structure" },
     { id: 150, text: "Example of obfuscation through linearity" },
     { id: 151, text: "First and second sentences are not marked as premises" },
     { id: 152, text: "Third sentence not marked as conclusion" },
@@ -40,9 +40,25 @@ const nodes = [
     { id: 168, text: "Reader must often read rest of text and try not to forget desire" },
 
 
-    { id: 7, text: "It's difficult to get an understanding of high-level points in pure text", kind: KEYPOINT },
+    { id: 7, text: "Text's linearity gets in the way of retrieving high-level overviews", kind: KEYPOINT },
+    { id: 169, text: "Common advice for reading scientific papers" },
+    { id: 170, text: "Common advice for speed reading" },
+    { id: 171, text: "Common reading advice breaks the linear intention of text" },
+    { id: 172, text: "Breaking linearity empowers the reader" },
+    { id: 173, text: "Text is not amenable to having its linearity broken" },
+
     { id: 8, text: "Searching for specific information is difficult in pure text", kind: KEYPOINT },
-    { id: 9, text: "Search might be solved through LLMs and RAG", kind: KEYPOINT},
+    { id: 174, text: "Example search desire" },
+    { id: 175, text: "Visual inspection doesn't work" },
+    { id: 177, text: "PDF Find function doesn't work" },
+
+    { id: 9, text: "Search might be solved through LLMs and Vector DBs", kind: KEYPOINT},
+    { id: 178, text: "Semantic search allows for better information extraction" },
+    { id: 179, text: "Search tools will likely start being included with purchased books" },
+    { id: 180, text: "Startup idea: LLM with purchase-unlockable knowledge bases of books" },
+    { id: 181, text: "Creates barriers to knowledge" },
+
+
     { id: 10, text: "This post is an experimental attempt to fix many problems with pure text", kind: MAIN_CONCLUSION },
     { id: 11, text: "Rhetoric is useful", kind: KEYPOINT },
     { id: 12, text: "Language is necessarily imprecise" },
@@ -263,8 +279,25 @@ const links = [
 
 
     { source: 7, target: 3, kind: PART },
+    { source: 169, target: 171, kind: EXAMPLE },
+    { source: 170, target: 171, kind: EXAMPLE },
+    { source: 171, target: 7, kind: CLAIM },
+    { source: 172, target: 171, kind: ANALYSIS },
+    { source: 173, target: 171, kind: ANALYSIS },
+    { source: 173, target: 7, kind: CLAIM },
+
     { source: 8, target: 3, kind: PART },
+    { source: 174, target: 8, kind: EXAMPLE },
+    { source: 175, target: 174, kind: ANALYSIS },
+    { source: 177, target: 174, kind: ANALYSIS },
+
+
     { source: 9, target: 8, kind: ANALYSIS },
+    { source: 178, target: 9, kind: CLAIM },
+    { source: 179, target: 9, kind: ANALYSIS },
+    { source: 180, target: 179, kind: ANALYSIS },
+    { source: 181, target: 180, kind: ANALYSIS },
+
     { source: 1, target: 10, kind: CLAIM },
     { source: 2, target: 10, kind: CLAIM },
     { source: 11, target: 10, kind: CLAIM },
@@ -303,7 +336,7 @@ const links = [
     { source: 185, target: 34, kind: PART },
     { source: 186, target: 34, kind: PART },
     { source: 39, target: 34, kind: EXAMPLE },
-    { source: 39, target: 35, kind: EXAMPLE },
+    { source: 35, target: 39, kind: CONTEXT },
 
     { source: 40, target: 21, kind: CLAIM },
     { source: 41, target: 40, kind: CLAIM },
