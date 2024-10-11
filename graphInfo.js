@@ -348,7 +348,6 @@ const links = [
     { source: 44, target: 21, kind: CLAIM },
     { source: 52, target: 45, kind: ANALYSIS },
     { source: 46, target: 44, kind: CLAIM },
-    { source: 54, target: 52, kind: ANALYSIS },
     { source: 54, target: 46, kind: CLAIM },
     { source: 47, target: 44, kind: ARTEFACT },
     { source: 48, target: 47, kind: CLAIM },
