@@ -82,6 +82,11 @@ function addScrollOnNodeClick(g) {
                 .on("click", () => el.scrollIntoView({ behavior: "smooth" }))
                 .style("cursor", "pointer");
         }
+        else {
+
+            d3.select(`g.node-${v} rect`)
+                .style('fill', '#eee')
+        }
 
     })
 
