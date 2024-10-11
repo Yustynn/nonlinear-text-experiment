@@ -426,7 +426,8 @@ const links = [
     { source: 99, target: 106, kind: CLAIM },
 
     { source: 107, target: 98, kind: PART },
-    { source: 108, target: 110, kind: CLAIM },
+    { source: 108, target: 903, kind: CLAIM },
+    { source: 110, target: 903, kind: CLAIM },
     { source: 903, target: 107, kind: PART },
     { source: 109, target: 108, kind: CLAIM },
     { source: 143, target: 110, kind: CLAIM },
