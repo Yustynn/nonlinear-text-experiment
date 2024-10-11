@@ -38,6 +38,10 @@ if (config.fullGraph.show) {
     // Run the renderer. This is what draws the final graph.
     render(d3.select("#full-graph g"), g);
 
+    addScrollOnNodeClick(g)
+
+
+
     // Center the graph
     var xCenterOffset = (svg.attr("width") - g.graph().width) / 2;
     svgGroup.attr("transform", "translate(" + xCenterOffset + ", 50)");

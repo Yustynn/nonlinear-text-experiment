@@ -61,6 +61,7 @@ function renderPartialGraph(nodeId) {
         var node = g.node(v);
         // Round the corners of the nodes
         node.rx = node.ry = 5;
+        d3.selectAll("g." + node.class).on("click", function() {console.log("clicked", node)});
     });
 
     // Create the renderer
@@ -82,6 +83,8 @@ function renderPartialGraph(nodeId) {
 
     // Run the renderer. This is what draws the final graph.
     render(d3.select("#partial-graph g"), g);
+    
+    addScrollOnNodeClick(g)
 
     // Center the graph
     var xCenterOffset = (svg.attr("width") - g.graph().width) / 2;
@@ -100,8 +103,6 @@ function renderPartialGraph(nodeId) {
 
 
 
-    const node = g.node(nodeId);
-    
     const rectPartial = document.querySelector(`#partial-graph g.node-${nodeId} > rect`);
     const { x, y } = extractTranslateValues(rectPartial.parentElement.getAttribute("transform"));
     const svg_ = document.querySelector("svg");
@@ -112,7 +113,8 @@ function renderPartialGraph(nodeId) {
     const ty = h/2 - y;
 
 
-    var transform = d3.zoomIdentity.translate(tx, ty).scale(1);
+    const SCALE = 0.85
+    var transform = d3.zoomIdentity.translate(tx*SCALE, ty*SCALE).scale(SCALE);
     svg.transition().duration(0).call(zoom.transform, transform);
     addSvgTitle(svg, TITLE_TEXT);
 }

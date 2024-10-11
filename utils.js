@@ -73,3 +73,16 @@ function dijkstraShortestPathWithLinks(nodes, links, start, end) {
 function formatNodeText(node) {
     return `[${node.id}] ${node.text}`;
 }
+
+function addScrollOnNodeClick(g) {
+    g.nodes().forEach(function(v) {
+        const el = document.querySelector(`div.n[node-id="${v}"]`);
+        if (el) {
+            d3.select(`g.node-${v}`)
+                .on("click", () => el.scrollIntoView({ behavior: "smooth" }))
+                .style("cursor", "pointer");
+        }
+
+    })
+
+}
