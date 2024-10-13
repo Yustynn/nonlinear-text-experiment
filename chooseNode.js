@@ -50,7 +50,6 @@ function findNearestNodeEl(el) {
 }
 
 function setSelected(el) {
-    console.log("Target", el)
     function extractTranslateValues(translateString) {
         const regex = /translate\(([^,]+),([^\)]+)\)/;
         const match = translateString.match(regex);
@@ -65,7 +64,6 @@ function setSelected(el) {
 
     const nodeEl = findNearestNodeEl(el);
     const id = +nodeEl.getAttribute("node-id");
-    console.log("Target id", id)
     renderPartialGraph(id)
     if (!config.fullGraph.show) renderKeypointGraph(id)
 
@@ -89,7 +87,6 @@ function setSelected(el) {
         const h = svg.clientHeight;
 
         zoomToPosition(w/2 - x, h/2 - y, 1)
-        console.log(`Node ${id} should be in view (x: ${x} to ${x + w/2}, y: ${y} to ${y + h/2})`);
 
     }
 

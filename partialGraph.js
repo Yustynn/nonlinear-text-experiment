@@ -38,9 +38,6 @@ function renderPartialGraph(nodeId) {
 
     const selNodes = getRelevantNodes(nodeId);
     const selNodeIds = selNodes.map(n => n.id);
-    console.log("selNodeIds", selNodeIds)
-
-    console.log("length of links", links.length)
     const selLinks = links.filter(e => selNodeIds.includes(e.source) && selNodeIds.includes(e.target));
     selNodeIds.push(nodeId);
 
@@ -61,7 +58,6 @@ function renderPartialGraph(nodeId) {
         var node = g.node(v);
         // Round the corners of the nodes
         node.rx = node.ry = 5;
-        d3.selectAll("g." + node.class).on("click", function() {console.log("clicked", node)});
     });
 
     // Create the renderer
@@ -109,11 +105,11 @@ function renderPartialGraph(nodeId) {
     const w = svg_.clientWidth;
     const h = svg_.clientHeight;
 
+    const SCALE = 1
     const tx = w/2 - x;
     const ty = h/2 - y;
 
 
-    const SCALE = 0.85
     var transform = d3.zoomIdentity.translate(tx*SCALE, ty*SCALE).scale(SCALE);
     svg.transition().duration(0).call(zoom.transform, transform);
     addSvgTitle(svg, TITLE_TEXT);

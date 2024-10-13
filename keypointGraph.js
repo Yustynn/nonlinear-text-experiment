@@ -28,7 +28,6 @@ function renderKeypointGraph(nodeId) {
 
     const selNodes = pathNodes.filter(n => n.kind === KEYPOINT || n.kind === MAIN_CONCLUSION || n.id == nodeId);
     if (selNodes[0].id != MAIN_CONCLUSION_ID) selNodes.reverse()
-    console.log(selNodes.map(n => n.id))
     const selLinks = []
     for (let i = 0; i < selNodes.length - 1; i++) {
         selLinks.push({ source: selNodes[i].id, target: selNodes[i+1].id });

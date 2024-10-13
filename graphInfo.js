@@ -227,6 +227,14 @@ const nodes = [
 
     { id: 182, text: "Leibniz's True Method" },
     { id: 183, text: "A vision for universally-agreeable method of argument" },
+
+    { id: 187, text: "Logical description can vary in detail according to author preference", kind: KEYPOINT },
+    { id: 188, text: "Not all content needs to be deeply dissected" },
+
+    { id: 189, text: "Significant parts of logic were not explicit in the text" },
+    { id: 190, text: "Surprising, I believed the text was clear" },
+    { id: 191, text: "Non-explicit parts are represented with grey nodes" },
+    { id: 192, text: "Example of implicit logic node" },
 ];
 
 const CLAIM = "claim"
@@ -355,17 +363,17 @@ const links = [
     { source: 50, target: 47, kind: CLAIM },
     { source: 51, target: 45, kind: CLAIM },
     { source: 53, target: 51, kind: ANALYSIS },
-    { source: 53, target: 54, kind: ANALYSIS },
+    { source: 53, target: 54, kind: PART },
 
     { source: 54, target: 21, kind: ANALYSIS },
-    { source: 55, target: 54, kind: CLAIM },
+    { source: 55, target: 54, kind: PART },
     { source: 56, target: 54, kind: ARTEFACT },
     { source: 57, target: 55, kind: CLAIM },
     { source: 58, target: 60, kind: CLAIM },
     { source: 59, target: 60, kind: CLAIM },
     { source: 60, target: 55, kind: CLAIM },
 
-    { source: 61, target: 54, kind: CLAIM },
+    { source: 61, target: 54, kind: PART },
     { source: 62, target: 63, kind: CLAIM },
     { source: 63, target: 64, kind: CLAIM },
     { source: 65, target: 66, kind: CLAIM },
@@ -374,7 +382,7 @@ const links = [
 
     { source: 66, target: 61, kind: CLAIM },
 
-    { source: 67, target: 54, kind: CLAIM },
+    { source: 67, target: 54, kind: PART },
     { source: 68, target: 67, kind: CLAIM },
     { source: 69, target: 68, kind: CLAIM },
     { source: 70, target: 68, kind: CLAIM },
@@ -477,6 +485,14 @@ const links = [
 
     { source: 182, target: 140, kind: PART },
     { source: 183, target: 182, kind: CLAIM },
+
+    { source: 187, target: 54, kind: PART },
+    { source: 188, target: 187, kind: CLAIM },
+
+    { source: 189, target: 54, kind: PART },
+    { source: 190, target: 189, kind: ANALYSIS },
+    { source: 191, target: 189, kind: CLAIM },
+    { source: 192, target: 189, kind: EXAMPLE },
 ];
 
 
